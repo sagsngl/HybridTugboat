@@ -1,0 +1,22 @@
+% -------------------------------------------------------------------
+clear all
+clc
+% -------------------------------------------------------------------
+importfile('Maxlimit');
+importfile('Daily_Load');
+importfile('Daily_Loadt');
+importfile('Daily_Loads');
+importfile('Daily_Loadl');
+importfile('Res_Torque');
+importfile('Fuel_con_map');
+importfile('eta_EM_map');
+importfile('Gensetdata');
+importfile('motor_eff_HTS');
+importfile('induction_lookup');
+importfile('power');
+P_CE_idle = 1;
+w_CE_idle = 32;
+Trans_In = 222;     %kg/m2
+DR = 5.213;
+motor_eff_IND = array2table();
+motor_eff_IND.('%power') = array2table(power(22:994).');induction_lookup(22:994).'
